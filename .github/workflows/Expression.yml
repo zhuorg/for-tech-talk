@@ -48,6 +48,8 @@ jobs:
           MATRIX_CONTEXT: ${{ toJson(matrix) }}
         run: echo "$MATRIX_CONTEXT"
         
+      - name: set env
+        run: echo "::set-env name=FOO::BAR"  
       - name: Dump env context
         env:
           ENV_CONTEXT: ${{ toJson(env) }}
