@@ -20,10 +20,17 @@ jobs:
         env:
           JOB_CONTEXT: ${{ toJson(job) }}
         run: echo "$JOB_CONTEXT"
+        #prepare for steps context
+      - name: Set the value
+        id: step_one
+        run: echo "::set-output name=FOO::BAR"
+      - name: Use it
+        run: echo ${{ steps.step_one.outputs.FOO }}
       - name: Dump steps context
         env:
           STEPS_CONTEXT: ${{ toJson(steps) }}
         run: echo "$STEPS_CONTEXT"
+        
       - name: Dump runner context
         env:
           RUNNER_CONTEXT: ${{ toJson(runner) }}
