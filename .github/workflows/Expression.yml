@@ -1,5 +1,5 @@
 name: Expression
-on: push
+on: check_suite
 
 jobs:
   one:
