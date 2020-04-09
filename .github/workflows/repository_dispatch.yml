@@ -1,7 +1,6 @@
-name: API trigger
+name: API create repository_dispatch event
 
 on: repository_dispatch
-
 
 jobs:
 
