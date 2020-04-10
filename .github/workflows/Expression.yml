@@ -3,6 +3,7 @@ on: push
 
 jobs:
   one:
+    if: ${{env.ddd}}
     runs-on: ${{ matrix.os }}
     #runs-on: ubuntu-latest
     env:
@@ -16,6 +17,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
+        if: ${{env.ddd}}
       - name: Dump GitHub context
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
