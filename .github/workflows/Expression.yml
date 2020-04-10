@@ -3,7 +3,6 @@ on: push
 
 jobs:
   one:
-    if: env.ddd
     runs-on: ${{ matrix.os }}
     #runs-on: ubuntu-latest
     env:
